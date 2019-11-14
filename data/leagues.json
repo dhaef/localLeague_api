@@ -1,0 +1,23 @@
+[
+    {
+        "name": "Founders",
+        "description": "This is it",
+        "location": "Metro Detroit",
+        "seasonStart": "Spring",
+        "_id": "5d725a4a7b292f5f8ceff789"
+    },
+    {
+        "name": "Walker",
+        "description": "This is it",
+        "location": "Upper Pen",
+        "seasonStart": "Spring",
+        "_id": "5d725a4a7b292f5f8ceff780"
+    },
+    {
+        "name": "Clover",
+        "description": "This is it",
+        "location": "Florida Handle",
+        "seasonStart": "Spring",
+        "_id": "5d725a4a7b292f5f8ceff781"
+    }
+]

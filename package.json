@@ -1,0 +1,21 @@
+{
+  "name": "localleague_api",
+  "version": "1.0.0",
+  "description": "API for local leagues to manage teams, player, stats, etc.",
+  "main": "server.js",
+  "scripts": {
+    "test": "standard",
+    "dev": "nodemon server"
+  },
+  "author": "Derek",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^1.19.4"
+  },
+  "dependencies": {
+    "colors": "^1.4.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.7.9"
+  }
+}
