@@ -60,20 +60,6 @@ TeamSchema.pre('save', function () {
     this.set({ points: total });
 });
 
-// Calculate points when updated 
-TeamSchema.post('update', function () {
-    console.log('Running');
-    let total = 0;
-    if (this.record.wins > 0) {
-        total += (this.record.wins * 3);
-    }
-    if (this.record.ties > 0) {
-        total += this.record.ties;
-    };
-
-    this.set({ points: total });
-});
-
 // reverse populate with virtuals
 TeamSchema.virtual('players', {
     ref: 'Player',
