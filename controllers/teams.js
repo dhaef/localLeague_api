@@ -6,63 +6,7 @@ const ErrorRes = require('../utils/errorRes');
 // GET /api/v1/teams
 exports.getTeams = async (req, res, next) => {
     try {
-        let query;
-
-        const reqQuery = { ...req.query };
-
-        const ignoreFields = ['select', 'sort', 'limit', 'page'];
-
-        ignoreFields.forEach(param => delete reqQuery[param]);
-
-        let queryStr = JSON.stringify(reqQuery);
-
-        queryStr = queryStr.replace(/\b(gt|gte|lt|lte|in)\b/g, match => `$${match}`);
-
-        query = Team.find(JSON.parse(queryStr));
-
-        if (req.query.select) {
-            const fields = req.query.select.split(',').join(' ');
-            query =  query.select(fields);
-        };
-
-        if (req.query.sort) {
-            const sortBy = req.query.sort.split(',').join(' ');
-            query = query.sort(sortBy);
-        };
-
-        const page = parseInt(req.query.page, 10) || 1;
-        const limit = parseInt(req.query.limit, 10) || 1;
-        const startIndex = (page - 1) * limit;
-        const endIndex = page * limit;
-        const total = await Team.countDocuments();
-
-        query = query.skip(startIndex).limit(limit);
-        
-        const teams = await query;
-        
-        // .populate({ path: 'players', select: 'name' });
-
-        const pagination = {};
-
-        if (endIndex < total) {
-            pagination.next = {
-                page: page + 1,
-                limit
-            }
-        }
-
-        if (startIndex > 0) {
-            pagination.prev = {
-                page: page - 1,
-                limit
-            }
-        }
-
-        if (!teams) {
-            return next(new ErrorRes('No teams in DB', 404));
-        }
-
-        res.status(200).json({ success: true, count: teams.length, pagination, data: teams });
+        res.status(200).json(res.queryResults);
     } catch (error) {
         next(error);
     }

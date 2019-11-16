@@ -5,16 +5,7 @@ const ErrorRes= require('../utils/errorRes');
 // GET /api/v1/leagues
 exports.getLeagues = async (req, res, next) => {
     try {
-        const leagues = await League.find().populate({
-            path: 'league',
-            select: 'name'
-        });
-
-        if (!leagues) {
-            return next(new ErrorRes('No Leagues in DB', 404));
-        }
-
-        res.status(200).json({ success: true, count: leagues.length, data: leagues });
+        res.status(200).json(res.queryResults);
     } catch (error) {
         next(error);
     }
