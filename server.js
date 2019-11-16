@@ -3,6 +3,7 @@ const express = require('express');
 const dotenv = require('dotenv');
 const mongooseConnect = require('./config/db');
 const errorHandler = require('./middleware/error');
+const cookieParser = require('cookie-parser');
 const colors = require('colors');
 
 // Load in env file
@@ -14,16 +15,19 @@ mongooseConnect();
 const leagues = require('./routes/leagues');
 const teams = require('./routes/teams');
 const players = require('./routes/players');
+const auth = require('./routes/auth');
 
 const app = express();
 
 // Body parser
 app.use(express.json());
+app.use(cookieParser());
 
 // Mount Routers
 app.use('/api/v1/leagues', leagues);
 app.use('/api/v1/teams', teams);
 app.use('/api/v1/players', players);
+app.use('/api/v1/auth', auth);
 
 // Handle errors
 app.use(errorHandler);

@@ -27,7 +27,7 @@ const players = JSON.parse(fs.readFileSync(`${__dirname}/data/players.json`, 'ut
 const importData = async () => {
     try {
         await League.create(leagues);
-        // await Team.create(teams);
+        await Team.create(teams);
         await Player.create(players);
 
         console.log('Data Imported...');
