@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Derek Doe",
+        "email": "derek@gmail.com",
+        "password": "123456",
+        "userType": "player"
+    },
+    {
+        "name": "Brad Smith",
+        "email": "brad@gmail.com",
+        "password": "123456",
+        "userType": "coach"
+    },
+    {
+        "name": "Mia Rose",
+        "email": "mia@gmail.com",
+        "password": "123456",
+        "userType": "player"
+    },
+    {
+        "name": "Jim Bob",
+        "email": "jim@gmail.com",
+        "password": "123456",
+        "userType": "director"
+    },
+    {
+        "name": "Sam Wright",
+        "email": "sam@gmail.com",
+        "password": "123456",
+        "userType": "player"
+    }
+]

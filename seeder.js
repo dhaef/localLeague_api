@@ -9,6 +9,7 @@ dotenv.config({ path: './config/config.env' });
 const League = require('./models/League');
 const Team = require('./models/Team');
 const Player = require('./models/Player');
+const User = require('./models/User');
 
 // Connect to DB
 mongoose.connect(process.env.MONGOOSE_URL, {
@@ -22,6 +23,7 @@ mongoose.connect(process.env.MONGOOSE_URL, {
 const leagues = JSON.parse(fs.readFileSync(`${__dirname}/data/leagues.json`, 'utf-8'));
 const teams = JSON.parse(fs.readFileSync(`${__dirname}/data/teams.json`, 'utf-8'));
 const players = JSON.parse(fs.readFileSync(`${__dirname}/data/players.json`, 'utf-8'));
+const users = JSON.parse(fs.readFileSync(`${__dirname}/data/users.json`, 'utf-8'));
 
 // Import into DB
 const importData = async () => {
@@ -29,6 +31,7 @@ const importData = async () => {
         await League.create(leagues);
         await Team.create(teams);
         await Player.create(players);
+        await User.create(users);
 
         console.log('Data Imported...');
         process.exit();
@@ -43,6 +46,7 @@ const deleteData = async () => {
         await League.deleteMany();
         await Team.deleteMany();
         await Player.deleteMany();
+        await User.deleteMany();
 
         console.log('Data Deleted...');
         process.exit();

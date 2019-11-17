@@ -16,6 +16,7 @@ const leagues = require('./routes/leagues');
 const teams = require('./routes/teams');
 const players = require('./routes/players');
 const auth = require('./routes/auth');
+const users = require('./routes/users');
 
 const app = express();
 
@@ -28,6 +29,7 @@ app.use('/api/v1/leagues', leagues);
 app.use('/api/v1/teams', teams);
 app.use('/api/v1/players', players);
 app.use('/api/v1/auth', auth);
+app.use('/api/v1/auth/users', users);
 
 // Handle errors
 app.use(errorHandler);
