@@ -10,7 +10,8 @@
             "wins": 3,
             "loses": 2,
             "ties": 1
-        }
+        },
+        "user": "5d713995b721c3bb38c1f502"
     },
     {
         "name": "Fury",
@@ -23,7 +24,8 @@
             "wins": 1,
             "loses": 3,
             "ties": 2
-        }
+        },
+        "user": "5d713995b721c3bb38c1f507"
     },
     {
         "name": "Jags",
@@ -36,6 +38,7 @@
             "wins": 2,
             "loses": 2,
             "ties": 2
-        }
+        },
+        "user": "5d713995b721c3bb38c1f508"
     }
 ]

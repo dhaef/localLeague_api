@@ -1,7 +1,7 @@
 [
     {
         "familyName": "Doe",
-        "name": "John",
+        "name": "Derek",
         "position": "MF",
         "age": 17,
         "team": "5d713995b721c3bb38c1f5d0",
@@ -9,11 +9,12 @@
         "stats": {
             "goals": 1,
             "assists": 3
-        }
+        },
+        "user": "5d713995b721c3bb38c1f501"
     },
     {
-        "familyName": "Smith",
-        "name": "Jack",
+        "familyName": "Rose",
+        "name": "Mia",
         "position": "FW",
         "age": 17,
         "team": "5d713995b721c3bb38c1f5d0",
@@ -21,11 +22,12 @@
         "stats": {
             "goals": 3,
             "assists": 1
-        }
+        },
+        "user": "5d713995b721c3bb38c1f503"
     },
     {
-        "familyName": "Bean",
-        "name": "Derek",
+        "familyName": "Chub",
+        "name": "Ryan",
         "position": "GK",
         "age": 17,
         "team": "5d713995b721c3bb38c1f5d0",
@@ -33,18 +35,7 @@
         "stats": {
             "saves": 12,
             "scoredOn": 6
-        }
-    },
-    {
-        "familyName": "McGill",
-        "name": "Dan",
-        "position": "DF",
-        "age": 17,
-        "team": "5d713995b721c3bb38c1f5d0",
-        "_id": "5d725a4a7b292f5f8ceff773",
-        "stats": {
-            "tacklesWon": 23,
-            "assists": 1
-        }
+        },
+        "user": "5d713995b721c3bb38c1f509"
     }
 ]

@@ -3,30 +3,63 @@
         "name": "Derek Doe",
         "email": "derek@gmail.com",
         "password": "123456",
-        "userType": "player"
-    },
-    {
-        "name": "Brad Smith",
-        "email": "brad@gmail.com",
-        "password": "123456",
-        "userType": "coach"
+        "userType": "player",
+        "_id": "5d713995b721c3bb38c1f501"
     },
     {
         "name": "Mia Rose",
         "email": "mia@gmail.com",
         "password": "123456",
-        "userType": "player"
+        "userType": "player",
+        "_id": "5d713995b721c3bb38c1f503"
+    },
+    {
+        "name": "Ryan Chub",
+        "email": "ryan@gmail.com",
+        "password": "123456",
+        "userType": "player",
+        "_id": "5d713995b721c3bb38c1f509"
+    },
+    {
+        "name": "Brad Smith",
+        "email": "brad@gmail.com",
+        "password": "123456",
+        "userType": "coach",
+        "_id": "5d713995b721c3bb38c1f502"
+    },
+    {
+        "name": "Conner Nean",
+        "email": "conner@gmail.com",
+        "password": "123456",
+        "userType": "coach",
+        "_id": "5d713995b721c3bb38c1f507"
+    },
+    {
+        "name": "Kyle Za",
+        "email": "kyle@gmail.com",
+        "password": "123456",
+        "userType": "coach",
+        "_id": "5d713995b721c3bb38c1f508"
     },
     {
         "name": "Jim Bob",
         "email": "jim@gmail.com",
         "password": "123456",
-        "userType": "director"
+        "userType": "director",
+        "_id": "5d713995b721c3bb38c1f504"
     },
     {
         "name": "Sam Wright",
         "email": "sam@gmail.com",
         "password": "123456",
-        "userType": "player"
+        "userType": "director",
+        "_id": "5d713995b721c3bb38c1f505"
+    },
+    {
+        "name": "Bill Wave",
+        "email": "bill@gmail.com",
+        "password": "123456",
+        "userType": "director",
+        "_id": "5d713995b721c3bb38c1f506"
     }
 ]

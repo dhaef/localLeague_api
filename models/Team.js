@@ -40,6 +40,11 @@ const TeamSchema = new mongoose.Schema({
     createdAt: {
         type: Date,
         default: Date.now
+    },
+    user: {
+        type: mongoose.Schema.ObjectId,
+        ref: 'User',
+        required: true
     }
 }, {
     toJSON: { virtuals: true },
@@ -48,7 +53,6 @@ const TeamSchema = new mongoose.Schema({
 
 // Calculate points on save
 TeamSchema.pre('save', function () {
-    console.log('Running');
     let total = 0;
     if (this.record.wins > 0) {
         total += (this.record.wins * 3);

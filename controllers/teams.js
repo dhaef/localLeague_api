@@ -57,6 +57,10 @@ exports.updateTeam = async (req, res, next) => {
         if (!team) {
             return next(new ErrorRes(`No Team with the id of ${req.params.id}`, 404));
         }
+        
+        if (req.user.id !== team.user.toString() && req.user.userType !== 'admin') {
+            return next(new ErrorRes(`User does not own this team`, 400));
+        }
 
         team = await Team.findByIdAndUpdate(req.params.id, req.body, {
             new: true,
@@ -78,6 +82,10 @@ exports.deleteTeam = async (req, res, next) => {
 
         if (!team) {
             return next(new ErrorRes(`No Team with the id of ${req.params.id}`, 404));
+        }
+
+        if (req.user.id !== team.user.toString() && req.user.userType !== 'admin') {
+            return next(new ErrorRes(`User does not own this team`, 400));
         }
 
         await Team.findByIdAndDelete(req.params.id);

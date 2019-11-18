@@ -70,6 +70,10 @@ exports.updatePlayer = async (req, res, next) => {
             return next(new ErrorRes(`No player with the id of ${req.params.id}`, 404));
         }
 
+        if (req.user.id !== player.user.toString() && req.user.userType !== 'admin') {
+            return next(new ErrorRes(`User does not own this player`, 400));
+        }
+
         player = await Player.findByIdAndUpdate(req.params.id, req.body, {
             new: true,
             runValidators: true
@@ -89,6 +93,10 @@ exports.deletePlayer = async (req, res, next) => {
 
         if (!player) {
             return next(new ErrorRes(`No player with the id of ${req.params.id}`, 404));
+        }
+
+        if (req.user.id !== player.user.toString() && req.user.userType !== 'admin') {
+            return next(new ErrorRes(`User does not own this player`, 400));
         }
 
         await player.remove()
