@@ -49,7 +49,11 @@ exports.updateLeague = async (req, res, next) => {
         let league = await League.findById(req.params.id);
 
         if (!league) {
-            return next({ success: false, data: `No league found with id of ${req.params.id}` });
+            return next(new ErrorRes(`No league with the id of ${req.params.id}`, 400));
+        }
+        
+        if (req.user.id !== league.user.toString() && req.user.userType !== 'admin') {
+            return next(new ErrorRes(`User does not own this league`, 400));
         }
 
         league = await League.findByIdAndUpdate(req.params.id, req.body, {
@@ -71,6 +75,10 @@ exports.deleteLeague = async (req, res, next) => {
 
         if (!league) {
             return next({ success: false, data: `No league found with id of ${req.params.id}` });
+        }
+
+        if (req.user.id !== league.user.toString() && req.user.userType !== 'admin') {
+            return next(new ErrorRes(`User does not own this league`, 400));
         }
 
         await League.findByIdAndDelete(req.params.id);
