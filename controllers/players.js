@@ -6,16 +6,7 @@ const ErrorRes = require('../utils/errorRes');
 // GET /api/v1/players
 exports.getPlayers = async (req, res, next) => {
     try {
-        const players = await Player.find().populate({
-            path: 'team',
-            select: 'name'
-        });
-
-        if (!players) {
-            return next(new ErrorRes('No players in DB', 404));
-        }
-
-        res.status(200).json({ success: true, count: players.length, data: players });
+        res.status(200).json(res.queryResults);
     } catch (error) {
         next(error);
     }
