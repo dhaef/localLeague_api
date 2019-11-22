@@ -1,7 +1,7 @@
 [
     {
         "name": "Average Joe's",
-        "age": "u18",
+        "ageGroup": "u18",
         "skill": "advanced",
         "city": "farmington",
         "_id": "5d713995b721c3bb38c1f5d0",
@@ -15,7 +15,7 @@
     },
     {
         "name": "Fury",
-        "age": "u18",
+        "ageGroup": "u18",
         "skill": "advanced",
         "city": "Novi",
         "_id": "5d713995b721c3bb38c1f5d1",
@@ -29,7 +29,7 @@
     },
     {
         "name": "Jags",
-        "age": "u18",
+        "ageGroup": "u18",
         "skill": "advanced",
         "city": "Westland",
         "_id": "5d713995b721c3bb38c1f5d2",

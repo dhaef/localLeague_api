@@ -6,7 +6,7 @@ const TeamSchema = new mongoose.Schema({
         required: [true, 'Please add a team name'],
         trim: true
     },
-    age: {
+    ageGroup: {
         type: String,
         required: [true, 'Please add the team age group'],
         enum: ['u16', 'u17', 'u18']
