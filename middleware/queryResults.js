@@ -23,19 +23,17 @@ const queryResults = (model) => async (req, res, next) => {
         query = query.sort(sortBy);
     };
 
-    if (req.query.populate && req.query.pselect) {
-        const addIn = req.query.populate.split(',').join(' ');
-        const addIn2 = req.query.pselect.split(',').join(' ');
+    if (req.baseUrl.endsWith('leagues')) {
+        query = query.populate('teams');
+    } else if (req.baseUrl.endsWith('teams')) {
         query = query.populate({
-            path: addIn,
-            select: addIn2
+            path: 'league players'
         });
-    };
+    } else if (req.baseUrl.endsWith('players')) {
+        query = query.populate('team');
+    }
 
-    if (req.query.populate && !req.query.pselect) {
-        const addIn = req.query.populate.split(',').join(' ');
-        query = query.populate(addIn);
-    };
+    // console.log(req.baseUrl, req.originalUrl);
 
     const page = parseInt(req.query.page, 10) || 1;
     const limit = parseInt(req.query.limit, 10) || 10;
@@ -46,8 +44,6 @@ const queryResults = (model) => async (req, res, next) => {
     query = query.skip(startIndex).limit(limit);
     
     const teams = await query;
-    
-    // .populate({ path: 'players', select: 'name' });
 
     const pagination = { currentPage: page };
 

@@ -16,7 +16,7 @@ exports.getTeams = async (req, res, next) => {
 // GET /api/v1/teams/:id
 exports.getTeam = async (req, res, next) => {
     try {
-        const team = await Team.findById(req.params.id);
+        const team = await Team.findById(req.params.id).populate('players league');
 
         if (!team) {
             return next(new ErrorRes(`No team team with the id of ${req.params.id}`, 404));
